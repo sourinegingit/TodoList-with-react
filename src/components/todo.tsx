@@ -21,7 +21,32 @@ const Todo = () => {
     setTasks((prev) => {
       return [...prev, newTask];
     });
+    setInputValue("");
   };
+
+  //   ----------------------delete tasks---------------
+  const handleDeleteTasks = (id: number) => {
+    setTasks(tasks.filter((task) => task.id !== id));
+  };
+
+  //   -----------------------edit tasks------------------
+  const handleEditTask = (id: number, newTitle: string) => {
+    setTasks(
+      tasks.map((task) =>
+        task.id === id ? { ...task, title: newTitle } : task
+      )
+    );
+  };
+
+
+//   -----------------------toggleTask--------------------
+const handleToggleCompleted=(id:number)=>{
+    setTasks(tasks.map((task)=>task.id === id ?{...task,isCompleted:!task.isCompleted}:task))
+
+}
+
+
+
 
 
   return (
@@ -52,7 +77,23 @@ const Todo = () => {
       </div>
 
       {/* todo items */}
-      <TodoItems />
+      {tasks.length === 0 ? (
+        <p className="text-center text-xl text-slate-600">
+          no tasks to display
+        </p>
+      ) : (
+        <div className="flex flex-col gap-y-3">
+          {tasks.map((task) => (
+            <TodoItems
+              key={task.id}
+              taskItems={task}
+              handleDeleteTasks={handleDeleteTasks}
+              handleEditTask={handleEditTask}
+              handleToggleComplete={handleToggleCompleted}
+            />
+          ))}
+        </div>
+      )}
     </div>
   );
 };

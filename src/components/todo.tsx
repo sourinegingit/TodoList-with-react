@@ -1,4 +1,5 @@
-import { MdAddToPhotos } from "react-icons/md";
+import { FaCheckCircle } from "react-icons/fa";
+import { MdAddToPhotos, MdDelete } from "react-icons/md";
 
 const Todo = () => {
   return (
@@ -16,7 +17,18 @@ const Todo = () => {
           className=" flex items-center text-2xl flex-1 h-12 rounded-xl pr-2 border-none outline-none pl-4 bg-transparent text-slate-600  placeholder:text-slate-700"
           placeholder="Add a Task Here"
         />
-        <button className="bg-orange-600 text-lg rounded-full  text-white font-medium border-none w-32 h-14">ADD</button>
+        <button className="bg-orange-600 text-lg rounded-full  text-white font-medium border-none w-32 h-14">
+          ADD
+        </button>
+      </div>
+
+      {/* todo items */}
+      <div className=" flex items-center justify-between gap-56 p-2  ">
+        <div className="flex items-center m-2 ">
+          <FaCheckCircle className="text-xl" />
+          <p className="text-slate-600 ml-4 text-2xl">hello</p>
+        </div>
+        <MdDelete className="text-3xl"/>
       </div>
     </div>
   );

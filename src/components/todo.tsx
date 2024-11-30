@@ -1,5 +1,5 @@
-import { FaCheckCircle } from "react-icons/fa";
-import { MdAddToPhotos, MdDelete } from "react-icons/md";
+import { MdAddToPhotos } from "react-icons/md";
+import TodoItems from "./todoItems";
 
 const Todo = () => {
   return (
@@ -23,13 +23,8 @@ const Todo = () => {
       </div>
 
       {/* todo items */}
-      <div className=" flex items-center justify-between gap-56 p-2  ">
-        <div className="flex items-center m-2 ">
-          <FaCheckCircle className="text-xl" />
-          <p className="text-slate-600 ml-4 text-2xl">hello</p>
-        </div>
-        <MdDelete className="text-3xl"/>
-      </div>
+     <TodoItems/>
+     <TodoItems/>
     </div>
   );
 };

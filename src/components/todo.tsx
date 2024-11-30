@@ -21,8 +21,8 @@ const Todo = () => {
     setTasks((prev) => {
       return [...prev, newTask];
     });
+    setInputValue("")
   };
-
 
   return (
     <div className="bg-gray-200 flex flex-col  min-h-[550px] rounded-xl p-7">
@@ -52,7 +52,17 @@ const Todo = () => {
       </div>
 
       {/* todo items */}
-      <TodoItems />
+      {tasks.length === 0 ? (
+        <p className="text-center text-xl text-slate-600">
+          no tasks to display
+        </p>
+      ) : (
+        <div className="flex flex-col gap-y-3">
+          {tasks.map((task) => (
+            <TodoItems key={task.id} taskItems={task}/>
+          ))}
+        </div>
+      )}
     </div>
   );
 };

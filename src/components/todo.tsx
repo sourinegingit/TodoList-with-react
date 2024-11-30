@@ -24,7 +24,7 @@ const Todo = () => {
 
       {/* todo items */}
      <TodoItems/>
-     <TodoItems/>
+   
     </div>
   );
 };

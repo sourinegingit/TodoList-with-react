@@ -8,10 +8,11 @@ isCompleted:boolean
 }
 
 interface todoItemProps{
-    taskItems:taskItem
+    taskItems:taskItem;
+    handleDeleteTasks:(id:number)=>void;
 }
 
-const TodoItems = ({taskItems}:todoItemProps) => {
+const TodoItems = ({taskItems,handleDeleteTasks}:todoItemProps) => {
  
     
   return (
@@ -20,7 +21,7 @@ const TodoItems = ({taskItems}:todoItemProps) => {
           <FaCheckCircle className="text-xl" />
           <p className="text-slate-600 ml-4 text-2xl">{taskItems.title}</p>
         </div>
-        <MdDelete className="text-3xl"/>
+        <MdDelete className="text-3xl" onClick={()=>{handleDeleteTasks(taskItems.id)}}/>
       </div>
   )
 }

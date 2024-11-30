@@ -24,6 +24,13 @@ const Todo = () => {
     setInputValue("")
   };
 
+//   ----------------------delete tasks-------------------------
+const handleDeleteTasks=(id:number)=>{
+    setTasks(tasks.filter((task)=>task.id !== id))
+
+}
+
+
   return (
     <div className="bg-gray-200 flex flex-col  min-h-[550px] rounded-xl p-7">
       {/* title */}
@@ -59,7 +66,7 @@ const Todo = () => {
       ) : (
         <div className="flex flex-col gap-y-3">
           {tasks.map((task) => (
-            <TodoItems key={task.id} taskItems={task}/>
+            <TodoItems key={task.id} taskItems={task} handleDeleteTasks={handleDeleteTasks}/>
           ))}
         </div>
       )}

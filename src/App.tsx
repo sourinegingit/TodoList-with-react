@@ -1,12 +1,13 @@
 
 import './App.css'
+import Todo from './components/todo'
 
 function App() {
 
   return (
-    <>
-    <h1 className='underline text-4xl'>negin</h1>
-    </>
+    <div>
+      <Todo/>
+    </div>
   )
 }
 

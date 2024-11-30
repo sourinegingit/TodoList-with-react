@@ -24,6 +24,7 @@ const Todo = () => {
     setInputValue("");
   };
 
+
   //   ----------------------delete tasks---------------
   const handleDeleteTasks = (id: number) => {
     setTasks(tasks.filter((task) => task.id !== id));

@@ -21,15 +21,22 @@ const Todo = () => {
     setTasks((prev) => {
       return [...prev, newTask];
     });
-    setInputValue("")
+    setInputValue("");
   };
 
-//   ----------------------delete tasks-------------------------
-const handleDeleteTasks=(id:number)=>{
-    setTasks(tasks.filter((task)=>task.id !== id))
+  //   ----------------------delete tasks---------------
+  const handleDeleteTasks = (id: number) => {
+    setTasks(tasks.filter((task) => task.id !== id));
+  };
 
-}
-
+  //   -----------------------edit tasks------------------
+  const handleEditTask = (id: number, newTitle: string) => {
+    setTasks(
+      tasks.map((task) =>
+        task.id === id ? { ...task, title: newTitle } : task
+      )
+    );
+  };
 
   return (
     <div className="bg-gray-200 flex flex-col  min-h-[550px] rounded-xl p-7">
@@ -66,7 +73,12 @@ const handleDeleteTasks=(id:number)=>{
       ) : (
         <div className="flex flex-col gap-y-3">
           {tasks.map((task) => (
-            <TodoItems key={task.id} taskItems={task} handleDeleteTasks={handleDeleteTasks}/>
+            <TodoItems
+              key={task.id}
+              taskItems={task}
+              handleDeleteTasks={handleDeleteTasks}
+              handleEditTask={handleEditTask}
+            />
           ))}
         </div>
       )}

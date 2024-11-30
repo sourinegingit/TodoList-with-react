@@ -21,7 +21,7 @@ const TodoItems = ({ taskItems, handleDeleteTasks,handleEditTask,handleToggleCom
             handleEditTask(taskItems.id,newTitle)
         }
     }
-    console.log(taskItems.isCompleted);
+    // console.log(taskItems.isCompleted);
     
   return (
     <div className=" flex items-center justify-between gap-56 p-2  ">

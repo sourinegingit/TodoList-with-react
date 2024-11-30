@@ -38,6 +38,17 @@ const Todo = () => {
     );
   };
 
+
+//   -----------------------toggleTask--------------------
+const handleToggleCompleted=(id:number)=>{
+    setTasks(tasks.map((task)=>task.id === id ?{...task,isCompleted:!task.isCompleted}:task))
+
+}
+
+
+
+
+
   return (
     <div className="bg-gray-200 flex flex-col  min-h-[550px] rounded-xl p-7">
       {/* title */}
@@ -78,6 +89,7 @@ const Todo = () => {
               taskItems={task}
               handleDeleteTasks={handleDeleteTasks}
               handleEditTask={handleEditTask}
+              handleToggleComplete={handleToggleCompleted}
             />
           ))}
         </div>

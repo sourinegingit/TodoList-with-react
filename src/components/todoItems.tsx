@@ -1,14 +1,16 @@
 import { FaCheckCircle } from "react-icons/fa";
 import { MdDelete } from "react-icons/md";
+import { Task } from "../types";
 
-interface taskItem {
-  title: string;
-  id: number;
-  isCompleted: boolean;
-}
+
+// interface taskItem {
+//   title: string;
+//   id: number;
+//   isCompleted: boolean;
+// }
 
 interface todoItemProps {
-  taskItems: taskItem;
+  taskItems: Task[];
   handleDeleteTasks: (id: number) => void;
   handleEditTask:(id:number,title:string)=>void;
   handleToggleComplete:(id:number)=>void;
